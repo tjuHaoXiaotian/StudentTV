@@ -6,7 +6,7 @@
 <hibernate-mapping package="cn.edu.tju.scs.domain">
 
 <class name="LocalAuth" table="localAuth">
-    <id name="userId" type="java.lang.Long">
+    <id name="localId" type="java.lang.Integer">
         <!--  //字段自增-->
         <generator class="native"/>
     </id>
@@ -14,7 +14,7 @@
     <property name="account" type="java.lang.String"  not-null="true"/>
     <property name="password" type="java.lang.String"  not-null="true"/>
     <property name="state" type="java.lang.Integer"  not-null="true"/>
-    <!-- unique="true"保证了外键在Person表中的唯一 -->
+    <!-- unique="true"保证了外键在表中的唯一 -->
     <many-to-one name="user" column="user_Id" unique="true" class="User" not-null="true" lazy="false"/>
 
 </class>

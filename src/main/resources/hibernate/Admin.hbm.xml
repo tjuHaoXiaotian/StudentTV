@@ -5,7 +5,7 @@
 
 <hibernate-mapping package="cn.edu.tju.scs.domain">
 
-<class name="Admin" table="admins">
+<class name="Admin" table="admin">
     <id name="adminId" type="java.lang.Integer">
         <!--  //字段自增-->
         <generator class="native"/>
@@ -13,6 +13,8 @@
 
     <property name="adminName" type="java.lang.String"  not-null="true"/>
     <property name="password" type="java.lang.String"  not-null="true"/>
+    <property name="createtime" type="java.sql.Timestamp" not-null="false"/>
+    <property name="updatetime" type="java.sql.Timestamp" not-null="false"/>
 
 </class>
 

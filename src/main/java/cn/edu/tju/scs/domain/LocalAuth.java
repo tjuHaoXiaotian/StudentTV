@@ -6,7 +6,7 @@ package cn.edu.tju.scs.domain;
  */
 public class LocalAuth extends BaseDomain{
     // 用户id
-    private Long userId;
+    private int localId;
     // 密码
     private String password;
     // 账号
@@ -22,12 +22,12 @@ public class LocalAuth extends BaseDomain{
 
     }
 
-    public Long getUserId() {
-        return userId;
+    public int getLocalId() {
+        return localId;
     }
 
-    public void setUserId(Long userId) {
-        this.userId = userId;
+    public void setLocalId(int localId) {
+        this.localId = localId;
     }
 
     public String getPassword() {

@@ -10,7 +10,7 @@ import java.sql.Timestamp;
 */
 public class Video extends BaseDomain{
 
-    private int id;
+    private int videoId;
     private String name;
     private String description;
     private String performer;
@@ -18,11 +18,12 @@ public class Video extends BaseDomain{
     private String path;
     private String imagePath;
 
-    @DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
+    // 赞 的数量
+    private int praise;
+
     @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
     private Timestamp createtime;
 
-    @DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
     @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
     private Timestamp updatetime;
     private Long size;
@@ -30,16 +31,23 @@ public class Video extends BaseDomain{
     private int visitedTimes;
     private String targetDir;
 
+
+    // 视频上传状态 0 已上传，未审批，1 正在审批, 2 未通过 ， 3 已通过
+    private int state;
+
+    // 视频的种类
+    int type;
+
     public Video(){
 
     }
 
-    public int getId() {
-        return id;
+    public int getVideoId() {
+        return videoId;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setVideoId(int videoId) {
+        this.videoId = videoId;
     }
 
     public String getName() {
@@ -90,7 +98,6 @@ public class Video extends BaseDomain{
         this.imagePath = imagePath;
     }
 
-    @DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
     @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
     public Timestamp getCreatetime() {
         return createtime;
@@ -100,7 +107,6 @@ public class Video extends BaseDomain{
         this.createtime = createtime;
     }
 
-    @DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
     @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
     public Timestamp getUpdatetime() {
         return updatetime;
@@ -140,5 +146,29 @@ public class Video extends BaseDomain{
 
     public void setTargetDir(String targetDir) {
         this.targetDir = targetDir;
+    }
+
+    public int getPraise() {
+        return praise;
+    }
+
+    public void setPraise(int praise) {
+        this.praise = praise;
+    }
+
+    public int getState() {
+        return state;
+    }
+
+    public void setState(int state) {
+        this.state = state;
+    }
+
+    public int getType() {
+        return type;
+    }
+
+    public void setType(int type) {
+        this.type = type;
     }
 }

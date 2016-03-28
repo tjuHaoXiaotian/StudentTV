@@ -13,31 +13,44 @@ import java.util.Set;
 public class User extends BaseDomain{
 
     // user id
-    private Long userId;
+    private int userId;
     // 账号
     private String account;
-    // 用户姓名
-    private String username;
+
+    // 用户简介
+    private String aboutMe;
+
+    // 用户头像地址
+    private String  AvatarPath;
+
     // 上次登录 IP
     private String lastIp;
-    // 上次登录时间
-    private Timestamp lastVisit;
 
+    // 用户创建时间
+    private Timestamp createtime;
+    // 更改时间
+    private Timestamp updatetime;
 
-    // 用户状态 0 正常， 1 已注销
-    private int State;
 
     public User(){
 
     }
 
 
-    public Long getUserId() {
+    public int getUserId() {
         return userId;
     }
 
-    public void setUserId(Long userId) {
+    public void setUserId(int userId) {
         this.userId = userId;
+    }
+
+    public String getAboutMe() {
+        return aboutMe;
+    }
+
+    public void setAboutMe(String aboutMe) {
+        this.aboutMe = aboutMe;
     }
 
     public String getAccount() {
@@ -48,14 +61,6 @@ public class User extends BaseDomain{
         this.account = account;
     }
 
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
     public String getLastIp() {
         return lastIp;
     }
@@ -64,42 +69,27 @@ public class User extends BaseDomain{
         this.lastIp = lastIp;
     }
 
-    public Timestamp getLastVisit() {
-        return lastVisit;
+    public Timestamp getCreatetime() {
+        return createtime;
     }
 
-    public void setLastVisit(Timestamp lastVisit) {
-        this.lastVisit = lastVisit;
+    public void setCreatetime(Timestamp createtime) {
+        this.createtime = createtime;
     }
 
-    public int getState() {
-        return State;
+    public Timestamp getUpdatetime() {
+        return updatetime;
     }
 
-    public void setState(int state) {
-        State = state;
+    public void setUpdatetime(Timestamp updatetime) {
+        this.updatetime = updatetime;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        User user = (User) o;
-
-        if (!account.equals(user.account)) return false;
-        if (!userId.equals(user.userId)) return false;
-        if (!username.equals(user.username)) return false;
-
-        return true;
+    public String getAvatarPath() {
+        return AvatarPath;
     }
 
-    @Override
-    public int hashCode() {
-        int result = userId.hashCode();
-        result = 31 * result + account.hashCode();
-        result = 31 * result + username.hashCode();
-        return result;
+    public void setAvatarPath(String avatarPath) {
+        AvatarPath = avatarPath;
     }
-
 }

@@ -5,9 +5,9 @@
 
 <hibernate-mapping package="cn.edu.tju.scs.domain">
 
-        <class name="cn.edu.tju.scs.domain.Video" table="videos">
+        <class name="cn.edu.tju.scs.domain.Video" table="video">
 
-                <id name="id" type="java.lang.Integer">
+                <id name="videoId" type="java.lang.Integer">
                 <!--  //字段自增-->
                     <generator class="native"/>
                 </id>
@@ -17,12 +17,15 @@
                 <property name="album" type="java.lang.String"/>
                 <property name="path" type="java.lang.String"/>
                 <property name="imagePath" type="java.lang.String"/>
+                <property name="praise" type="java.lang.Integer"/>
                 <property name="targetDir" type="java.lang.String"/>
                 <property name="createtime" type="java.sql.Timestamp"/>
                 <property name="updatetime" type="java.sql.Timestamp"/>
                 <property name="size" type="java.lang.Long"/>
                 <property name="duration" type="java.lang.String"/>
                 <property name="visitedTimes" type="java.lang.Integer"/>
+                <property name="state" type="java.lang.Integer" not-null="true"/>
+                <property name="type" type="java.lang.Integer" not-null="true"/>
         </class>
 
 </hibernate-mapping>

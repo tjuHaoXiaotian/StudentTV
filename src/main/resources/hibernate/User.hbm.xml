@@ -5,18 +5,19 @@
 
 <hibernate-mapping package="cn.edu.tju.scs.domain">
 
-<class name="User" table="users">
-    <id name="userId" type="java.lang.Long">
+<class name="User" table="user">
+    <id name="userId" type="java.lang.Integer">
         <!--  //字段自增-->
         <generator class="native"/>
     </id>
 
     <property name="account" type="java.lang.String"  not-null="true"/>
-    <property name="username" type="java.lang.String"  not-null="true"/>
+    <property name="aboutMe" type="java.lang.String"  not-null="false"/>
+    <property name="avatarPath" type="java.lang.String"  not-null="false"/>
 
     <property name="lastIp" type="java.lang.String"/>
-    <property name="lastVisit" type="java.sql.Timestamp"/>
-    <property name="state" type="java.lang.Integer"  not-null="true"/>
+    <property name="createtime" type="java.sql.Timestamp" not-null="false"/>
+    <property name="updatetime" type="java.sql.Timestamp" not-null="false"/>
     <!--<one-to-one name="localAuth" />-->
     <!-- property-ref="user"外键在userExt表中保证了引用user -->
     <!--<one-to-one name="localAuth" property-ref="user" lazy="no-proxy"/>-->
