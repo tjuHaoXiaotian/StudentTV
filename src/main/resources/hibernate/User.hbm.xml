@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="cn.edu.tju.scs.domain">
+
+<class name="User" table="users">
+    <id name="userId" type="java.lang.Long">
+        <!--  //字段自增-->
+        <generator class="native"/>
+    </id>
+
+    <property name="account" type="java.lang.String"  not-null="true"/>
+    <property name="username" type="java.lang.String"  not-null="true"/>
+
+    <property name="lastIp" type="java.lang.String"/>
+    <property name="lastVisit" type="java.sql.Timestamp"/>
+    <property name="state" type="java.lang.Integer"  not-null="true"/>
+    <!--<one-to-one name="localAuth" />-->
+    <!-- property-ref="user"外键在userExt表中保证了引用user -->
+    <!--<one-to-one name="localAuth" property-ref="user" lazy="no-proxy"/>-->
+</class>
+
+</hibernate-mapping>
