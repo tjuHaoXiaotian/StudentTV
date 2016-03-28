@@ -94,7 +94,8 @@ public class BaseDao<T, ID extends Serializable> implements IBaseDao<T, ID> {
     @Override
     public List<T>getAll(){
 //        return this.getSession().createCriteria(getEntityClass()).addOrder(Order.asc("id")).list(); // desc
-        return this.getSession().createCriteria(getEntityClass()).addOrder(Order.asc("id")).list(); // desc
+//        return this.getSession().createCriteria(getEntityClass()).addOrder(Order.asc("id")).list(); // desc
+        return this.getSession().createCriteria(getEntityClass()).list(); // desc
     }
 
 

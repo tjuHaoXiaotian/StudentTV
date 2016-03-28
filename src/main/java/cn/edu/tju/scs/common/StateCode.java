@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
+ * 项目返回码
  * Created by catold on 15/12/19.
  */
 public class StateCode{

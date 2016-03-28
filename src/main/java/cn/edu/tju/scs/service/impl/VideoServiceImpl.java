@@ -43,6 +43,17 @@ public class VideoServiceImpl implements VideoService{
     }
 
     @Override
+    public Video getVideo(int id) {
+        return videoDao.get(id);
+    }
+
+    @Override
+    public void updateVideo(Video video) {
+        videoDao.update(video);
+    }
+
+
+    @Override
     public void save(Video video) {
         videoDao.save(video);
     }

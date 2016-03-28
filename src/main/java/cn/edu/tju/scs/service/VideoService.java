@@ -13,6 +13,10 @@ public interface VideoService {
 
     public List<Video> getAll();
 
+    public Video getVideo(int id);
+
+    public void updateVideo(Video video);
+
     public void save(Video video);
 
     public  boolean uploadImage( MultipartFile file,String targetDir,String baseUrl);
