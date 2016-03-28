@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * Created by jack on 2016/3/16.
  */
 @Controller(value = "adminController")
-@RequestMapping(value = {"admin"})
+@RequestMapping(value = {"admins"})
 public class AdminController extends BaseController{
 
     @Autowired

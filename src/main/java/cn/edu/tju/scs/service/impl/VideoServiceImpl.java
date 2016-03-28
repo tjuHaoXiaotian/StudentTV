@@ -91,6 +91,7 @@ public class VideoServiceImpl implements VideoService{
     }
 
 
+
     //单文件上传，视频
     public  String[] uploadVideo( MultipartFile file,String targetDir,String baseUrl){
         try{
@@ -129,12 +130,12 @@ public class VideoServiceImpl implements VideoService{
                 return null;
             }
 
-            /**
-             *  视频转换操作
-             */
-            String targetPath = targetFile.getAbsolutePath();
-            int targetIndex = targetPath.lastIndexOf(".");
-            VideoTran.convert(targetPath,targetPath.substring(0,targetIndex)+".mp4");
+//            /**
+//             *  视频转换操作
+//             */
+//            String targetPath = targetFile.getAbsolutePath();
+//            int targetIndex = targetPath.lastIndexOf(".");
+//            VideoTran.convert(targetPath,targetPath.substring(0,targetIndex)+".mp4");
 
             /**
              *  截取图片操作
@@ -171,12 +172,27 @@ public class VideoServiceImpl implements VideoService{
 
 
             // filePath 此处是图片存储路径，+主机名+端口号+应用名，可以直接访问，浏览器可以直接访问的地址
-            String filePath =baseUrl + "/" + fileName.substring(0, fileName.lastIndexOf("."))+".mp4";
+//            String filePath =baseUrl + "/" + fileName.substring(0, fileName.lastIndexOf("."))+".mp4";
+            String filePath =baseUrl + "/" + fileName;
             return new String[] {filePath,imagePath,duration};
         }catch (IOException e){
             e.printStackTrace();
             return null;
         }
+    }
+
+    @Override
+    public String[] getVideoPath(int id) {
+        Video targetVideo = videoDao.get(id);
+        String targetDir =targetVideo.getTargetDir();
+        String path = targetVideo.getPath();
+        String targetName = "";
+        if(Constants.SYSTEM_TYPE.contains("windows")){
+            targetName = path.substring(path.lastIndexOf('\\'));
+        }else{
+            targetName = path.substring(path.lastIndexOf('/'));
+        }
+        return new String []{targetDir+targetName,targetName};
     }
 
     @Override
@@ -186,6 +202,17 @@ public class VideoServiceImpl implements VideoService{
             videoDao.deleteById(id);
             return true;
         }else {
+            return false;
+        }
+    }
+
+    @Override
+    public boolean praiseVideo(int id) {
+        Video video =  videoDao.get(id);
+        if(video != null){
+            video.setPraise(video.getPraise() + 1);
+            return true;
+        }else{
             return false;
         }
     }

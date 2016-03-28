@@ -19,9 +19,13 @@ public interface VideoService {
 
     public void save(Video video);
 
-    public  boolean uploadImage( MultipartFile file,String targetDir,String baseUrl);
+    public boolean uploadImage( MultipartFile file,String targetDir,String baseUrl);
 
-    public  String[] uploadVideo( MultipartFile file,String targetDir,String baseUrl);
+    public String[] uploadVideo( MultipartFile file,String targetDir,String baseUrl);
+
+    public String[] getVideoPath(int id);
 
     public boolean deleteVideo(int id);
+
+    public boolean praiseVideo(int id);
 }

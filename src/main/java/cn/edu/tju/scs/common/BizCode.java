@@ -12,7 +12,8 @@ public enum BizCode {
 
     // user 错误码
     WRONGPERMISSION(403,"没有操作权限"),
-    WRONGUSER(401,"用户验证错误")
+    WRONGUSER(401,"用户验证错误"),
+    NOTFOUND(404,"目标资源（对象）不存在")
 
 
     // 待议...根据后台逻辑分类

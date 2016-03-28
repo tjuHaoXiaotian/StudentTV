@@ -76,6 +76,7 @@
                 <value>classpath:hibernate/User.hbm.xml</value>
                 <value>classpath:hibernate/Video.hbm.xml</value>
                 <value>classpath:hibernate/Comment.hbm.xml</value>
+                <value>classpath:hibernate/Collection.hbm.xml</value>
             </list>
         </property>
         <!--<property name="annotatedClasses">-->
@@ -107,6 +108,10 @@
     </bean>
 
     <bean id="commentDao" class="cn.edu.tju.scs.dao.CommentDao">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+    <bean id="collectionDao" class="cn.edu.tju.scs.dao.CollectionDao">
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
 

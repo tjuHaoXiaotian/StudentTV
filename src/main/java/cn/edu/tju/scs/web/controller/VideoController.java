@@ -8,13 +8,15 @@ import cn.edu.tju.scs.service.VideoService;
 import cn.edu.tju.scs.util.GetIP;
 import cn.edu.tju.scs.util.MyDate;
 import cn.edu.tju.scs.web.controller.base.BaseController;
+import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
-import java.io.IOException;
+import javax.servlet.http.HttpServletResponse;
+import java.io.*;
 import java.net.InetAddress;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
@@ -92,6 +94,27 @@ public class VideoController extends BaseController{
 
 
     /**
+     * 赞
+     * @param id
+     * @return
+     */
+    @RequestMapping(value="/{id}/praise",method= RequestMethod.GET)
+    public @ResponseBody
+    StateCode praiseVideoByGet(@PathVariable int id) {
+        if(videoService.praiseVideo(id))
+            return  StateCode.buildCode(BizCode.SUCCESS);
+        else {
+            StateCode stateCode =  StateCode.buildCode(BizCode.NOTFOUND);
+            stateCode.addData("error","赞的视频文件不存在或已被移除");
+            return stateCode;
+        }
+
+    }
+
+
+
+
+    /**
      * 删除一个 video
      * @param id
      * @return
@@ -105,6 +128,43 @@ public class VideoController extends BaseController{
         }else {
             return  StateCode.buildCode(BizCode.FAIL);
         }
+    }
+
+    /**
+     *  浏览器端的下载文件？？？？？？？？？？？？ 是否多余
+     * @param id
+     * @param response
+     * @return
+     * @throws IOException
+     */
+    @RequestMapping(value = "/{id}/download", method = RequestMethod.DELETE)
+    public @ResponseBody
+    StateCode download(@PathVariable("id") int id,HttpServletResponse response) throws IOException {
+        String [] result = videoService.getVideoPath(id);
+        if(result == null){
+            StateCode stateCode  = StateCode.buildCode(BizCode.FAIL);
+            stateCode.addData("error","下载的资源文件不存在");
+            return stateCode;
+        }else{
+            try{
+//            // 将正确能识别的中文文件名转成ISO8859-1 编码才可以正确下载
+//            String fileNameEncode = new String(fileName.getBytes(),"ISO8859-1");
+
+                response.setContentType("application/x-msdownload");
+                FileInputStream fileInputStream = new FileInputStream(new File(result[0]));
+
+                response.setHeader("Content-Disposition","attachment;filename=" + result[1]);
+                OutputStream outputStream = response.getOutputStream();
+
+                IOUtils.copy(fileInputStream, outputStream);
+            }catch (FileNotFoundException e){
+                e.printStackTrace();
+            }catch (IOException e){
+                e.printStackTrace();
+            }
+            return StateCode.buildCode(BizCode.SUCCESS);
+        }
+
     }
 
     /**
@@ -197,6 +257,8 @@ public class VideoController extends BaseController{
             return false;
         }
     }
+
+
 
 
 
