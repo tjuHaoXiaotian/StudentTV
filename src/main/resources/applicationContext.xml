@@ -94,7 +94,19 @@
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
 
+    <bean id="localAuthDao" class="cn.edu.tju.scs.dao.LocalAuthDao">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+    <bean id="userDao" class="cn.edu.tju.scs.dao.UserDao">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
     <bean id="videoDao" class="cn.edu.tju.scs.dao.VideoDao">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+    <bean id="commentDao" class="cn.edu.tju.scs.dao.CommentDao">
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
 

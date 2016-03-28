@@ -1,16 +1,14 @@
 package cn.edu.tju.scs.domain;
 
-import org.springframework.format.annotation.NumberFormat;
+import cn.edu.tju.scs.domain.base.BaseDomain;
 
-import java.math.BigDecimal;
 import java.sql.Timestamp;
-import java.util.Set;
 
 /**
  * User domain
  * Created by jack on 2016/1/1.
  */
-public class User extends BaseDomain{
+public class User extends BaseDomain {
 
     // user id
     private int userId;

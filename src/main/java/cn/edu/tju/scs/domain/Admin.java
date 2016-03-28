@@ -1,5 +1,7 @@
 package cn.edu.tju.scs.domain;
 
+import cn.edu.tju.scs.domain.base.BaseDomain;
+
 import java.sql.Timestamp;
 
 /**

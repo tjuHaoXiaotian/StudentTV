@@ -1,12 +1,10 @@
 package cn.edu.tju.scs.util;
 
-import cn.edu.tju.scs.Constants;
+import cn.edu.tju.scs.common.Constants;
 
-import java.beans.Encoder;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.InputStreamReader;
-import java.text.DecimalFormat;
 import java.util.List;
 
 /**

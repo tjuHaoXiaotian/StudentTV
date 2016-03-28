@@ -1,10 +1,12 @@
 package cn.edu.tju.scs.domain;
 
+import cn.edu.tju.scs.domain.base.BaseDomain;
+
 /**
  * 本地账户管理
  * Created by jack on 2016/1/10.
  */
-public class LocalAuth extends BaseDomain{
+public class LocalAuth extends BaseDomain {
     // 用户id
     private int localId;
     // 密码

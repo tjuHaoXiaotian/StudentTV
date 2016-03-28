@@ -1,4 +1,4 @@
-package cn.edu.tju.scs.domain;
+package cn.edu.tju.scs.domain.base;
 
 
 

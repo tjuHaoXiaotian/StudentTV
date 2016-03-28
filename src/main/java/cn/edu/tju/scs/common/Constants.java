@@ -1,4 +1,4 @@
-package cn.edu.tju.scs;
+package cn.edu.tju.scs.common;
 
 /**
  * 放常量文件

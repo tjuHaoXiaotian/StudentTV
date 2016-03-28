@@ -1,11 +1,10 @@
 package cn.edu.tju.scs.web.controller;
 
-import cn.edu.tju.scs.Constants;
+import cn.edu.tju.scs.common.Constants;
 import cn.edu.tju.scs.common.BizCode;
 import cn.edu.tju.scs.common.StateCode;
 import cn.edu.tju.scs.domain.Video;
 import cn.edu.tju.scs.service.VideoService;
-import cn.edu.tju.scs.util.CreatePhotos;
 import cn.edu.tju.scs.util.GetIP;
 import cn.edu.tju.scs.util.MyDate;
 import cn.edu.tju.scs.web.controller.base.BaseController;

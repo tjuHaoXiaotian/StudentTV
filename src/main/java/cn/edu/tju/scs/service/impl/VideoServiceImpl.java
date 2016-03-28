@@ -1,6 +1,6 @@
 package cn.edu.tju.scs.service.impl;
 
-import cn.edu.tju.scs.Constants;
+import cn.edu.tju.scs.common.Constants;
 import cn.edu.tju.scs.dao.VideoDao;
 import cn.edu.tju.scs.domain.Video;
 import cn.edu.tju.scs.service.VideoService;

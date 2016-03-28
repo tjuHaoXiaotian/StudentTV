@@ -1,12 +1,14 @@
 package cn.edu.tju.scs.domain;
 
+import cn.edu.tju.scs.domain.base.BaseDomain;
+
 import java.sql.Timestamp;
 
 /**
  * 评论
  * Created by jack on 2016/3/28.
  */
-public class Comment extends BaseDomain{
+public class Comment extends BaseDomain {
 
     private int commentId;
 

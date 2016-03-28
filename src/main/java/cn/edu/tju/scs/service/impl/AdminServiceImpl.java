@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
- * 管理员用户操作
+ * 管理员用户操作 impl
  * Created by jack on 2016/3/16.
  */
 

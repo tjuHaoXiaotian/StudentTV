@@ -1,14 +1,14 @@
 package cn.edu.tju.scs.domain;
 
+import cn.edu.tju.scs.domain.base.BaseDomain;
 import com.fasterxml.jackson.annotation.JsonFormat;
-import org.springframework.format.annotation.DateTimeFormat;
 
 import java.sql.Timestamp;
 
 /**
 * Created by jack on 2015/10/6.
 */
-public class Video extends BaseDomain{
+public class Video extends BaseDomain {
 
     private int videoId;
     private String name;
