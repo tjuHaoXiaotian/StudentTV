@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="cn.edu.tju.scs.domain">
+
+<class name="LocalAuth" table="localAuth">
+    <id name="localId" type="java.lang.Integer">
+        <!--  //字段自增-->
+        <generator class="native"/>
+    </id>
+
+    <property name="account" type="java.lang.String"  not-null="true"/>
+    <property name="password" type="java.lang.String"  not-null="true"/>
+    <property name="state" type="java.lang.Integer"  not-null="true"/>
+    <!-- unique="true"保证了外键在表中的唯一 -->
+    <many-to-one name="user" column="user_Id" unique="true" class="User" not-null="true" lazy="false"/>
+
+</class>
+
+</hibernate-mapping>

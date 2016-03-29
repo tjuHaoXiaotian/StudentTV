@@ -1,0 +1,16 @@
+//"{ 'videoId': 2,'name': '風吹麥浪 by Dizi_高清.mp4','description': '视频文件：風吹麥浪 by Dizi_高清.mp4','performer': '水月儿','album': '水月儿笛子专辑',
+//'path': 'http://localhost:8080/upload/video/2016_03_28/1920469039877063/2016_03_28_11_06_35_風吹麥浪byDizi_高清.mp4',
+//'imagePath': 'http://localhost:8080/upload/video/2016_03_28/1920469039877063/2016_03_28_11_06_35_風吹麥浪byDizi_高清.jpg',
+//'praise': 0,'createtime': null,'updatetime': null,'size': 17330316,'duration': '00:04:12.54','visitedTimes': 0,
+//'targetDir': 'D:\upload\video\2016_03_28\1920469039877063\','state': 0,'type': 4}"
+
+
+{
+  "account":"汤宏垚",
+  "password":"123",
+  "state":1,
+  "user":{
+    "account":"汤宏垚",
+    "aboutMe":"往事随风"
+  }
+}

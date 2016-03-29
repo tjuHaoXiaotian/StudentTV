@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/mvc
+       http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+    <context:component-scan base-package="cn.edu.tju.scs.web" />
+
+    <!-- 开启注解 --><!--添加注解的目的可以使JSON 字符串自动转换成实体类-->
+    <mvc:annotation-driven />
+
+    <!--切面-->
+    <!--<aop:aspectj-autoproxy/>-->
+
+    <!--&lt;!&ndash;默认的静态资源的访问（.js .CSS .png），不会被springMVC 框架直接处理,而是递交给了原始的web 容器 tomcat,采用默认的方式处理&ndash;&gt;-->
+    <!--<mvc:default-servlet-handler />-->
+
+    <mvc:resources location="js/" mapping="/js/**" />
+    <mvc:resources location="bower_components/" mapping="/bower_components/**" />
+    <mvc:resources location="images/" mapping="/images/**" />
+    <mvc:resources location="css/" mapping="/css/**" />
+    <mvc:resources location="css/fonts" mapping="/fonts/**" />
+
+
+
+
+
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/pages/"/>
+        <property name="suffix" value=".jsp"/>
+        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+    </bean>
+
+
+
+
+     <!--异常处理器 -->
+    <!--<bean id="exceptionResolver" class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">-->
+        <!--<property name="exceptionMappings">-->
+            <!--<props>-->
+                <!--<prop key="java.lang.Exception">Exception</prop>-->
+            <!--</props>-->
+        <!--</property>-->
+    <!--</bean>-->
+
+    <!--<mvc:interceptors>-->
+        <!--&lt;!&ndash; 使用bean定义一个Interceptor，直接定义在mvc:interceptors根下面的Interceptor将拦截所有的请求 &ndash;&gt;-->
+        <!--<bean class="cn.edu.tju.scs.fm.interceptor.LoginInterceptor">-->
+            <!--<property name="excludedUrls">-->
+                <!--<list>-->
+                    <!--<value>/login</value>-->
+                    <!--<value>/preLogin</value>-->
+                    <!--<value>/logout</value>-->
+                    <!--<value>.jpg</value>-->
+                    <!--<value>.css</value>-->
+                    <!--<value>.js</value>-->
+                    <!--<value>.woff</value>-->
+                    <!--<value>.woff2</value>-->
+                    <!--<value>.ttf</value>-->
+                <!--</list>-->
+            <!--</property>-->
+        <!--</bean>-->
+        <!--&lt;!&ndash; 定义在mvc:interceptor下面的表示是对特定的请求才进行拦截的 &ndash;&gt;-->
+        <!--&lt;!&ndash;&lt;!&ndash;<bean class="cn.edu.tju.scs.bank.interceptor.LoginInterceptor"></bean>&ndash;&gt;&ndash;&gt;-->
+        <!--&lt;!&ndash;<mvc:interceptor>&ndash;&gt;-->
+            <!--&lt;!&ndash;&lt;!&ndash; 拦截所有URL中包含/user/的请求 &ndash;&gt;&ndash;&gt;-->
+            <!--&lt;!&ndash;<mvc:mapping path="/*"/>&ndash;&gt;-->
+            <!--&lt;!&ndash;&ndash;&gt;-->
+        <!--&lt;!&ndash;</mvc:interceptor>&ndash;&gt;-->
+    <!--</mvc:interceptors>-->
+
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+         <property name="maxUploadSize" value="2048000000"/>
+    </bean>
+
+</beans>

@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="cn.edu.tju.scs.domain">
+
+        <class name="cn.edu.tju.scs.domain.Video" table="video">
+
+                <id name="videoId" type="java.lang.Integer">
+                <!--  //字段自增-->
+                    <generator class="native"/>
+                </id>
+                <property name="name" type="java.lang.String" not-null="true"/>
+                <property name="description" type="java.lang.String" not-null="false"/>
+                <property name="performer" type="java.lang.String"/>
+                <property name="album" type="java.lang.String"/>
+                <property name="path" type="java.lang.String"/>
+                <property name="imagePath" type="java.lang.String"/>
+                <property name="praise" type="java.lang.Integer"/>
+                <property name="targetDir" type="java.lang.String"/>
+                <property name="createtime" type="java.sql.Timestamp"/>
+                <property name="updatetime" type="java.sql.Timestamp"/>
+                <property name="size" type="java.lang.Long"/>
+                <property name="duration" type="java.lang.String"/>
+                <property name="visitedTimes" type="java.lang.Integer"/>
+                <property name="state" type="java.lang.Integer" not-null="true"/>
+                <property name="type" type="java.lang.Integer" not-null="true"/>
+        </class>
+
+</hibernate-mapping>

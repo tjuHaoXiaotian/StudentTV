@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="cn.edu.tju.scs.domain">
+
+<class name="Comment" table="comment">
+    <id name="commentId" type="java.lang.Integer">
+        <!--  //字段自增-->
+        <generator class="native"/>
+    </id>
+
+    <property name="content" type="java.lang.String"  not-null="true"/>
+    <property name="createtime" type="java.sql.Timestamp" not-null="false"/>
+    <property name="ref_video_Id" type="java.lang.Integer" not-null="true"/>
+
+    <!-- unique="true"保证了外键在表中的唯一 -->
+    <many-to-one name="user" column="ref_user_Id" unique="true" class="User" not-null="true" lazy="false"/>
+</class>
+
+</hibernate-mapping>
