@@ -16,8 +16,8 @@
     <property name="avatarPath" type="java.lang.String"  not-null="false"/>
 
     <property name="lastIp" type="java.lang.String"/>
-    <property name="createtime" type="java.sql.Timestamp" not-null="false"/>
-    <property name="updatetime" type="java.sql.Timestamp" not-null="false"/>
+    <property name="createtime" type="java.sql.Timestamp" not-null="true"/>
+    <property name="updatetime" type="java.sql.Timestamp" not-null="true"/>
     <!--<one-to-one name="localAuth" />-->
     <!-- property-ref="user"外键在userExt表中保证了引用user -->
     <!--<one-to-one name="localAuth" property-ref="user" lazy="no-proxy"/>-->

@@ -24,7 +24,7 @@ public class AdminController extends BaseController{
     AdminService adminService;
 
 
-    @RequestMapping(value = "/login",method = RequestMethod.POST)
+    @RequestMapping(value = "/login",method = RequestMethod.GET)
     public @ResponseBody
     StateCode login(@RequestBody Admin admin){
         if(adminService.hasMatchAdmin(admin.getAdminName(),admin.getPassword())){
@@ -32,6 +32,13 @@ public class AdminController extends BaseController{
         }else {
             return  StateCode.buildCode(BizCode.WRONGUSER);
         }
+    }
+
+    @RequestMapping(method = RequestMethod.POST)
+    public @ResponseBody
+    StateCode add(@RequestBody Admin admin){
+        adminService.saveAdmin(admin);
+        return  StateCode.buildCode(BizCode.SUCCESS);
     }
 
 }

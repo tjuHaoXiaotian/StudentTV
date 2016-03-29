@@ -19,8 +19,8 @@
                 <property name="imagePath" type="java.lang.String"/>
                 <property name="praise" type="java.lang.Integer"/>
                 <property name="targetDir" type="java.lang.String"/>
-                <property name="createtime" type="java.sql.Timestamp"/>
-                <property name="updatetime" type="java.sql.Timestamp"/>
+                <property name="createtime" type="java.sql.Timestamp" not-null="true"/>
+                <property name="updatetime" type="java.sql.Timestamp" not-null="true"/>
                 <property name="size" type="java.lang.Long"/>
                 <property name="duration" type="java.lang.String"/>
                 <property name="visitedTimes" type="java.lang.Integer"/>

@@ -12,7 +12,7 @@
     </id>
 
     <property name="content" type="java.lang.String"  not-null="true"/>
-    <property name="createtime" type="java.sql.Timestamp" not-null="false"/>
+    <property name="createtime" type="java.sql.Timestamp" not-null="true"/>
     <property name="ref_video_Id" type="java.lang.Integer" not-null="true"/>
 
     <!-- unique="true"保证了外键在表中的唯一 -->

@@ -13,8 +13,8 @@
 
     <property name="adminName" type="java.lang.String"  not-null="true"/>
     <property name="password" type="java.lang.String"  not-null="true"/>
-    <property name="createtime" type="java.sql.Timestamp" not-null="false"/>
-    <property name="updatetime" type="java.sql.Timestamp" not-null="false"/>
+    <property name="createtime" type="java.sql.Timestamp" not-null="true"/>
+    <property name="updatetime" type="java.sql.Timestamp" not-null="true"/>
 
 </class>
 
