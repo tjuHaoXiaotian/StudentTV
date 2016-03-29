@@ -66,6 +66,7 @@ public class UserController extends BaseController{
         return stateCode;
     }
 
+
     /**
      * 添加一个收藏
      * @return
@@ -91,7 +92,11 @@ public class UserController extends BaseController{
 
 
     /**
+<<<<<<< HEAD
      * 查看所有收藏
+=======
+     * 添加一个收藏
+>>>>>>> 1e5966aa17ca2e194b47a4ffa01965f71fbe2109
      * @return
      */
     @RequestMapping(value = "/{userId}/collections",method = RequestMethod.GET)

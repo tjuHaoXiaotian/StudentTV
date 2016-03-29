@@ -165,6 +165,7 @@ public class VideoController extends BaseController{
         }else{
             try{
 //            // 将正确能识别的中文文件名转成ISO8859-1 编码才可以正确下载
+
                 String fileNameEncode = new String(result[1].getBytes(),"ISO8859-1");
 
                 response.setContentType("application/x-msdownload");
@@ -179,6 +180,7 @@ public class VideoController extends BaseController{
                 FileInputStream fileInputStream = new FileInputStream(file);
 
                 response.setHeader("Content-Disposition","attachment;filename=" + fileNameEncode);
+
                 OutputStream outputStream = response.getOutputStream();
 
                 IOUtils.copy(fileInputStream, outputStream);
@@ -263,6 +265,7 @@ public class VideoController extends BaseController{
         if( results!= null){
 
             // 业务操作,暂时这样----------------------------------------------------
+            // 业务操作
             Video video = new Video();
             video.setName(uploadFileName);
             video.setDescription("视频文件：" + uploadFileName);
@@ -278,7 +281,6 @@ public class VideoController extends BaseController{
             video.setSize(file.getSize());
             video.setDuration(results[2]);
             video.setTargetDir(targetDir);
-
             video.setState(0);
             video.setType(Type.MUSIC.getType());
             videoService.save(video);

@@ -161,6 +161,7 @@
      function deleteVideo(id){
          $.ajax({
              url: rootUrl+'StudentTV/video/delete/'+id,
+
 //             contentType:"application/json",
              type: 'get'
 //             dataType: 'json',

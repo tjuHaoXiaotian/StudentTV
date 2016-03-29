@@ -1,16 +1,14 @@
 package cn.edu.tju.scs.web.controller.base;
 
+
 import cn.edu.tju.scs.common.BizCode;
 import cn.edu.tju.scs.common.StateCode;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.portlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * BaseController 异常处理的基类
@@ -35,6 +33,7 @@ public class BaseController {
 //            return new ModelAndView("error1",model);
 //        }
         return stateCode;
+
 
     }
 }
